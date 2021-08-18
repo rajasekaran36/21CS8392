@@ -1,0 +1,6 @@
+{
+    "java.project.sourcePaths": [
+        "examples/u104-datatypes",
+        "examples/u105-variable-types"
+    ]
+}
