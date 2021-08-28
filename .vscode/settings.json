@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
+        "examples/u105-variable-types",
         "examples/u104-datatypes",
-        "examples/u105-variable-types"
+        "nerds/analize-meet"
     ]
 }
