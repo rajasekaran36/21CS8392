@@ -111,13 +111,13 @@ public class Main {
     public static void main(String[] args) throws MalformedURLException, IOException {
 
         String mapSheetId = "1Njnz3U8skMg8m1M5-k6HY6tCPp88Qj8mg-JEwnOBE-I";
-        String mapSheetName = "II-IT";
+        String mapSheetName = "IV-IT";
         String mapData = MeetUtils.getSheetCSV(mapSheetId, mapSheetName);
         List<Student> students = MeetUtils.getStudents(mapData);
         List<String> studentMeetNames = new ArrayList<>();
 
-        String meetSheetId = "1lcTnJM9OnhOzBxEP-8voTzXvQ1xzKKpPXnceTFKzntY";
-        String meetSheetName = "26-08";
+        String meetSheetId = "1btpxZHjNcYY1d5IfbGdGL8Ac292jlkj6e6v6YRuld8g";
+        String meetSheetName = "28-08";
         String meetData = MeetUtils.getSheetCSV(meetSheetId, meetSheetName);
         List<MeetRecord> meetRecords = MeetUtils.getMeetRecords(meetData);
         List<String> meetNames = new ArrayList<>();

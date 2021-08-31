@@ -1,1 +1,1 @@
-.\examples\u101-helloworld
+.\projects\analize-meet
