@@ -6,6 +6,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 import java.io.InputStreamReader;
 
 class Student {
@@ -38,23 +39,25 @@ class Student {
     }
 }
 
-class MeetRecord{
+class MeetRecord {
     private String meetName;
     private String lastSeen;
     private String duration;
 
-    public MeetRecord(String meetName,String lastSeen,String duration){
+    public MeetRecord(String meetName, String lastSeen, String duration) {
         this.meetName = meetName;
         this.lastSeen = lastSeen;
         this.duration = duration;
     }
-    
+
     public String getMeetName() {
         return meetName;
     }
+
     public String getLastSeen() {
         return lastSeen;
     }
+
     public String getDuration() {
         return duration;
     }
@@ -82,10 +85,11 @@ class MeetUtils {
         }
         return out;
     }
-    public static List<MeetRecord> getMeetRecords(String meetData){
+
+    public static List<MeetRecord> getMeetRecords(String meetData) {
         List<MeetRecord> meetRecords = new ArrayList<>();
         String[] lines = meetData.split("\n");
-        for(int i=1;i<lines.length;i++){
+        for (int i = 1; i < lines.length; i++) {
             String[] words = lines[i].split(",");
             MeetRecord mr = new MeetRecord(words[0], words[1], words[2]);
             meetRecords.add(mr);
@@ -93,7 +97,7 @@ class MeetUtils {
         return meetRecords;
     }
 
-    public static List<Student> getStudents(String mapData){
+    public static List<Student> getStudents(String mapData) {
         List<Student> students = new ArrayList<>();
         for (String x : mapData.split("\n")) {
             String[] words = x.split(",");
@@ -108,39 +112,54 @@ class MeetUtils {
 }
 
 public class Main {
+
+    public static getData(){
+        Scanner in = new Scanner(System.in);
+        
+        System.out.println("\n1.II - Year\n2.III-Year\n3.Choice:");
+        int choice = in.nextInt();
+        if(choice==1){
+
+        }
+        else{
+
+        }
+    }
+
     public static void main(String[] args) throws MalformedURLException, IOException {
 
+        Scanner in = new Scanner("System.in");
+
         String mapSheetId = "1Njnz3U8skMg8m1M5-k6HY6tCPp88Qj8mg-JEwnOBE-I";
-        String mapSheetName = "IV-IT";
+        String mapSheetName = "II-IT";
         String mapData = MeetUtils.getSheetCSV(mapSheetId, mapSheetName);
         List<Student> students = MeetUtils.getStudents(mapData);
         List<String> studentMeetNames = new ArrayList<>();
 
-        String meetSheetId = "1btpxZHjNcYY1d5IfbGdGL8Ac292jlkj6e6v6YRuld8g";
-        String meetSheetName = "28-08";
+        String meetSheetId = "1lcTnJM9OnhOzBxEP-8voTzXvQ1xzKKpPXnceTFKzntY";
+        String meetSheetName = "31-08";
         String meetData = MeetUtils.getSheetCSV(meetSheetId, meetSheetName);
         List<MeetRecord> meetRecords = MeetUtils.getMeetRecords(meetData);
         List<String> meetNames = new ArrayList<>();
-        
+
         StringBuilder outCSV = new StringBuilder();
 
-        meetRecords.stream().forEach(s->{
+        meetRecords.stream().forEach(s -> {
             meetNames.add(s.getMeetName());
         });
 
-        students.stream().forEach(s->{
-            String line = s.getRollNo()+","+s.getRegNo()+","+s.getName();
-            if(meetNames.contains(s.getGmeetNames().get(0))){
-                line += ","+s.getGmeetNames().get(0)+","+"P";
-            }
-            else{
-                line += ","+s.getGmeetNames().get(0)+","+"AB";
+        students.stream().forEach(s -> {
+            String line = s.getRollNo() + "," + s.getRegNo() + "," + s.getName();
+            if (meetNames.contains(s.getGmeetNames().get(0))) {
+                line += "," + s.getGmeetNames().get(0) + "," + "P";
+            } else {
+                line += "," + s.getGmeetNames().get(0) + "," + "AB";
             }
             line += "\n";
             outCSV.append(line);
         });
 
-        FileWriter fileWriter = new FileWriter(meetSheetName+".csv");
+        FileWriter fileWriter = new FileWriter(meetSheetName + ".csv");
         fileWriter.write(outCSV.toString());
         fileWriter.close();
     }
