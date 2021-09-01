@@ -1,15 +1,16 @@
 abstract class Vehicle {
     abstract public void start();
+	abstract public void stop();
 }
 
-class Cycle extends Vehicle {
+abstract class Cycle extends Vehicle {
     public void start() {
         System.out.println("Unlock your Cycle");
     }
 }
 
 abstract class MotorVehicle extends Vehicle {
-    public void stop() {
+	public void stop() {
         System.out.println("Twist Key Anticlockwise");
     }
 }
@@ -24,19 +25,13 @@ class Car extends MotorVehicle {
     public void start() {
         System.out.println("Twist Key");
     }
+
 }
 
 public class Main {
     public static void main(String[] args) {
-        Car car = new Car();
-        Bike bike = new Bike();
-        Cycle cycle = new Cycle();
-		
-		MotorVehicle mv = new MotorVehicle();
-		mv.start();
-
-        car.start();
-        bike.start();
-        cycle.start();
+		Vehicle v = new Car();
+		v.start();
+		v.stop();
     }
 }
