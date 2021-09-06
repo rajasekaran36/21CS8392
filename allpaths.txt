@@ -1,0 +1,18 @@
+.
+.\examples
+.\examples\u101-helloworld
+.\examples\u102-simpleclass
+.\examples\u103-constructor-types
+.\examples\u104-datatypes
+.\examples\u105-variable-types
+.\examples\u106-cf-branch
+.\examples\u107-cf-switch
+.\examples\u108-cf-for-loop
+.\examples\u202-needofabstract
+.\examples\u203 - dynamic-binding
+.\examples\u204-unlock-bike-composition
+.\examples\u205-final
+.\homeworks
+.\homeworks\a1
+.\projects
+.\projects\analize-meet
