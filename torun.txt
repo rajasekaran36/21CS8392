@@ -1,1 +1,1 @@
-./examples/u203 - dynamic-binding
+./examples/u102-simpleclass

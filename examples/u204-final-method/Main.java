@@ -9,7 +9,7 @@ class Account {
         this.accountHolderName = accountHolderName;
         this.aadharNumber = aadharNumber;
     }
-
+    
     public int getBalance() {
         return balance;
     }
@@ -55,21 +55,16 @@ class Bank {
 
     public void displayAccounts() {
         for (Account account : accounts) {
-            System.out.println(account);
+            if (account != null)
+                System.out.println(account);
         }
     }
 
 }
 
-class XYZBank extends Bank {
-    public Account getAccount(int accountNumber) {
-        return accounts[0];
-    }
-}
-
 public class Main {
     public static void main(String[] args) {
-        XYZBank bank = new XYZBank();
+        Bank bank = new Bank();
         bank.createAccount("Rajasekaran S", "123412341234");
         bank.createAccount("Sathish R", "987698769876");
         bank.displayAccounts();
