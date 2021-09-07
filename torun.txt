@@ -1,1 +1,1 @@
-./examples/u104-datatypes
+./examples/u206-alram-interface
