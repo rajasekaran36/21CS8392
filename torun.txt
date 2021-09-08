@@ -1,1 +1,1 @@
-./examples/u206-alram-interface
+./examples/u207-object-class
