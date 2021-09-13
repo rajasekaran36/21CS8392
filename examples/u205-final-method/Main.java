@@ -1,10 +1,7 @@
 abstract class Vehicle {
     private Lock lock;
-
     abstract public void start();
-
     abstract public void stop();
-
 }
 
 abstract class Cycle extends Vehicle {

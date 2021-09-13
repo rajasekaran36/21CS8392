@@ -1,1 +1,1 @@
-./examples/u207-object-class
+./examples/u208-innerclass-static

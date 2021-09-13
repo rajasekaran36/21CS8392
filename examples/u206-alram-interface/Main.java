@@ -2,15 +2,10 @@ import java.util.Calendar;
 
 interface Alarm {
     public void setAlram(int hours, int min);
-
     public void arm();
-
     public void disarm();
-
     public void snooz(int min);
-
     public void ring();
-
     public boolean isArmed();
 }
 
